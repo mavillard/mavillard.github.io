@@ -9,18 +9,20 @@ $(document).ready(function(){
   var table = $("<table></table>").addClass("castas-table");
   for(var i = 1; i <= 48; i++) {
     (function(k) {
-      var painting_url = getDomainName() + "data/painting/" + k + ".json"
+      var painting_url_json = getDomainName() + "data/painting/" + k + ".json"
       $.ajax({
-        url: painting_url,
+        url: painting_url_json,
         dataType: "json",
         success: function(data, status) {
           var row = $("<tr></tr>").addClass("castas-row");
-          var title = '<a property="url" href="' + painting_url + '">' + data['title'] + '</a>';
+          var painting_url_html = painting_url_json.substring(0, painting_url_json.length - 5)
+          var title = '<a property="url" href="' + painting_url_html + '">' + data['title'] + '</a>';
           var col1 = $("<td id='lala'></td>", {
             "vocab": "http://schema.org/",
             "typeof": "Painting"
           }).addClass("castas-col").html(title);
-          var author = '<a property="url" href="' + data['author_url'] + '">' + data['author'] + '</a>';
+          var author_url_html = data['author_url'].substring(0, data['author_url'].length - 5)
+          var author = '<a property="url" href="' + author_url_html + '">' + data['author'] + '</a>';
           var col2 = $("<td></td>", {
             "vocab": "http://schema.org/",
             "typeof": "Person"
