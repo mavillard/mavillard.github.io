@@ -15,13 +15,13 @@ $(document).ready(function(){
         dataType: "json",
         success: function(data, status) {
           var row = $("<tr></tr>").addClass("castas-row");
-          var painting_url_html = painting_url_json.substring(0, painting_url_json.length - 5)
+          var painting_url_html = painting_url_json.replace('.json', '.html')
           var title = '<a property="url" href="' + painting_url_html + '">' + data['title'] + '</a>';
           var col1 = $("<td id='lala'></td>", {
             "vocab": "http://schema.org/",
             "typeof": "Painting"
           }).addClass("castas-col").html(title);
-          var author_url_html = data['author_url'].substring(0, data['author_url'].length - 5)
+          var author_url_html = data['author_url'].replace('.json', '.html')
           var author = '<a property="url" href="' + author_url_html + '">' + data['author'] + '</a>';
           var col2 = $("<td></td>", {
             "vocab": "http://schema.org/",
