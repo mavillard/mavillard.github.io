@@ -14,7 +14,6 @@ $(document).ready(function(){
         url: painting_url,
         dataType: "json",
         success: function(data, status) {
-        debugger;
           var row = $("<tr></tr>").addClass("castas-row");
           var title = '<a property="url" href="' + painting_url + '">' + data['title'] + '</a>';
           var col1 = $("<td id='lala'></td>", {
