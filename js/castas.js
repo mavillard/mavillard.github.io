@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
-   // jQuery methods go here...
+//var table = $('<table></table>').addClass('castas-table');
+//for(i=0; i<3; i++){
+//    var row = $('<tr></tr>').addClass('bar').text('result ' + i);
+//    table.append(row);
+//}
+
+//$('#here_table').append(table);
 
 });
