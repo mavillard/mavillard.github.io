@@ -3,7 +3,7 @@ $(document).ready(function(){
   for(var i = 1; i <= 48; i++) {
     (function(k) {
       $.ajax({
-        url: "file:///home/antonio/git/lod/data/painting/" + k + ".json",
+        url: document.URL + "data/painting/" + k + ".json",
         dataType: "json",
         success: function(data, status) {
           var row = $("<tr></tr>").addClass("castas-row");
@@ -24,7 +24,7 @@ $(document).ready(function(){
   $("#castas-content").append(table);
   
   $.ajax({
-    url: "file:///home/antonio/git/lod/castas_lod.json",
+    url: document.URL + "castas_lod.json",
     dataType: "text",
     success: function(data, status) {
       $("#castas-jsonld").text(data);
