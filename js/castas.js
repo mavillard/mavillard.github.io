@@ -16,11 +16,20 @@ $(document).ready(function(){
         success: function(data, status) {
         debugger;
           var row = $("<tr></tr>").addClass("castas-row");
-          var title = '<a href="' + painting_url + '">' + data['title'] + '</a>';
-          var col1 = $("<td></td>").addClass("castas-col").html(title);
-          var author = '<a href="' + data['author_url'] + '">' + data['author'] + '</a>';
-          var col2 = $("<td></td>").addClass("castas-col").html(author);
-          var col3 = $("<td></td>").addClass("castas-col").text(data['year']);
+          var title = '<a property="url" href="' + painting_url + '">' + data['title'] + '</a>';
+          var col1 = $("<td id='lala'></td>", {
+            "vocab": "http://schema.org/",
+            "typeof": "Painting"
+          }).addClass("castas-col").html(title);
+          var author = '<a property="url" href="' + data['author_url'] + '">' + data['author'] + '</a>';
+          var col2 = $("<td></td>", {
+            "vocab": "http://schema.org/",
+            "typeof": "Person"
+          }).addClass("castas-col").html(author);
+          var col3 = $("<td></td>", {
+            "vocab": "http://schema.org/",
+            "typeof": "Number"
+            }).addClass("castas-col").text(data['year']);
           row.append(col1);
           row.append(col2);
           row.append(col3);
@@ -44,4 +53,6 @@ $(document).ready(function(){
       console.log("Error: url " + url + "not found.");
     }
   });
+  
+  $
 });
