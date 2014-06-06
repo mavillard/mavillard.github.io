@@ -54,6 +54,4 @@ $(document).ready(function(){
       console.log("Error: url " + url + "not found.");
     }
   });
-  
-  $
 });
