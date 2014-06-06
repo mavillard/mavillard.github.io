@@ -26,10 +26,11 @@ $(document).ready(function(){
             "vocab": "http://schema.org/",
             "typeof": "Person"
           }).addClass("castas-col").html(author);
+          year = '<span property="year">' + data['year'] + '</span>';
           var col3 = $("<td></td>", {
             "vocab": "http://schema.org/",
             "typeof": "Number"
-            }).addClass("castas-col").text(data['year']);
+            }).addClass("castas-col").html(year);
           row.append(col1);
           row.append(col2);
           row.append(col3);
